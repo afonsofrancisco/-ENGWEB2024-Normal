@@ -18,11 +18,11 @@ services:
   mongodb:
     image: mongo:latest
     ports:
-      - "27017:27017"
+      - "27016:27016"
     depends_on:
       - mongo-seed
   mongo-seed:
     image: mongo:latest
     volumes:
-      - ./dataset.json:/dataset.json
-    command: mongoimport --host mongodb -d contratos -c contratos --type json --file dataset.json --jsonArray
+      - ./contratos2024.json:/contratos2024.json
+    command: mongoimport --host mongodb -d contratos -c contratos --type json --file contratos2024.json --jsonArray

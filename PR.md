@@ -12,3 +12,12 @@
 ```bash
 mongo-seed-1  | 2024-05-16T14:48:21.399+0000    36377 document(s) imported successfully. 0 document(s) failed to import.
 ```
+
+
+## Execução
+
+Para rodar a aplicação basta correr o comando:
+
+```bash
+docker compose up --build -d
+```
