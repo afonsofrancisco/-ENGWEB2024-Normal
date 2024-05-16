@@ -1,0 +1,19 @@
+QUERIE 1
+db.contratos.countDocuments()
+output 36377
+
+
+QUERIE 2
+db.contratos.countDocuments({ tipoprocedimento: "Ajuste Direto Regime Geral" })
+output 17067
+
+
+QUERIE 3
+db.contratos.aggregate([{ $group: { _id: "$entidade_comunicante" } },{ $sort: { _id: 1 } }])
+
+QUERIE 4
+db.contratos.aggregate([{ $group: { _id: "$tipoprocedimento", count: { $sum: 1 } } } ])
+
+
+QUERIE 5
+db.contratos.aggregate([{ $group: { _id: "$entidade_comunicante", totalAmount: { $sum: { $toDouble: "$precoContratual" } } } }])
